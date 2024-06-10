@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
-import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { DetallePokemon } from './detallePokemon';
+import NavbarPokeApi  from './NavbarPokeApi';
+
 import './HomePage.css'
 
 export const HomePage = (page = 0 ) => {
   const [pokemons,setPokemons] = useState([]);
   const [selecionado,setSeleccionado] = useState(null);
-  console.log("🛰️ ~ HomePage ~ selecionado:", selecionado);
   const [showDetail,setShowDetail] = useState(false);
 
 
@@ -36,7 +36,11 @@ export const HomePage = (page = 0 ) => {
   return (
     <div>
       {(showDetail) ? 
-        <DetallePokemon pokemon={selecionado} setShowDetail={setShowDetail}/> :
+      <div>
+        <NavbarPokeApi></NavbarPokeApi>
+        <DetallePokemon pokemon={selecionado} setShowDetail={setShowDetail}/> 
+        <div/>
+        :
         (
           <div responsive className='container'> 
       <h2> Lista de Pokemones</h2>
