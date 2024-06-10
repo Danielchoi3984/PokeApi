@@ -2,10 +2,13 @@ import { useState } from 'react'
 import './App.css'
 import LoginSignup from './LoginSignup.jsx';
 import HomePage from './HomePage.jsx'
+import Item from './Item.jsx'
+import { Routes , Route} from 'react-router-dom';
+import NavbarPokeApi from './NavbarPokeApi.jsx';
 // import Container from "react-bootstrap/Container";
 // import Navbar from 'react-bootstrap/Navbar';
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
   const [loginMessage, setLoginMessage] = useState('')
   const handlelogin = async (email, password) => {
     try {
@@ -26,7 +29,12 @@ function App() {
     <div className='app'>
           {isLoggedIn ? (
             <div>
-            <HomePage/>
+              <NavbarPokeApi />
+                <Routes>
+                  <Route path="/Home" element={<HomePage/>} />
+                  <Route path="/Items" element={<Item/>} />
+                </Routes>
+
         
             </div>
           ):

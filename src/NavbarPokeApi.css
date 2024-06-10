@@ -1,9 +1,25 @@
 .nav{
-    background-color:goldenrod;
-    color: White;
+    background-color:#0f172a;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
+    width: 100%;
+}
+.titulo{
+    font-size: 3rem;
+    color: white;
+}
+
+.nav li.active{
+background-color: #555;
+}
+.nav ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+.nav a{
+    color: inherit;
 }

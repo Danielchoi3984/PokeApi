@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import { detalleItem } from './detalleItem';
+import { DetalleItem } from './detalleItem';
 import './HomePage.css'
 
 export const Item = (page = 0 ) => {
@@ -14,8 +14,8 @@ export const Item = (page = 0 ) => {
     const fetchItems = async ()=> {
     try{
       const list = [];
-      for (let i = 1; i <= 10; i++) {
-      const response = await fetch(`https://pokeapi.co/api/v2/Item/${i}`);
+      for (let i = 1; i <= 20; i++) {
+      const response = await fetch(`https://pokeapi.co/api/v2/item/${i}`);
       const item = await response.json();
       list.push(item);
       }
@@ -43,9 +43,7 @@ export const Item = (page = 0 ) => {
               <th></th>
               <th>ID </th>
               <th>Name</th>
-              <th>Base Experience</th>
-              <th>Img </th>
-              
+              <th>Img</th>
             </tr>
           </thead>
           <tbody>
@@ -55,8 +53,7 @@ export const Item = (page = 0 ) => {
             <tr key={item.id} onClick={()=>setSeleccionado(item)} className={selecionado?.id === item.id ? 'seleccionado' : ""}>
               <td>{item.id}</td>
               <td>{item.name}</td>
-              <td>{item.base_experience}</td>
-              <td><img src={item.sprites.front_default}/></td>
+              <td><img src={item.sprites.default}/></td>
             </tr>)
             }
           )}

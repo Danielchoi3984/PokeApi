@@ -36,15 +36,13 @@ export const HomePage = (page = 0 ) => {
   return (
     <div>
       {(showDetail) ? 
-      <div>
-        <NavbarPokeApi></NavbarPokeApi>
+      
         <DetallePokemon pokemon={selecionado} setShowDetail={setShowDetail}/> 
-        <div/>
         :
         (
-          <div responsive className='container'> 
+      <div className='container'> 
       <h2> Lista de Pokemones</h2>
-        <Table responsive striped bordered hover variant="dark">
+        <Table className='table' variant="dark">
           <thead>
             <tr>
               <th></th>
@@ -71,13 +69,8 @@ export const HomePage = (page = 0 ) => {
         </Table>
           <Button onClick={(e) => setShowDetail(true)}>MostrarDetalle</Button>
       </div>
-      
-      )
-
-
-      }
+      )}
   </div>
-  );
-
+  )
 }
 export default HomePage

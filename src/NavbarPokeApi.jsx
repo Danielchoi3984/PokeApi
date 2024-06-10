@@ -1,16 +1,17 @@
 import "./NavbarPokeApi.css"
+import { Link } from "react-router-dom"
 
 export const NavbarPokeApi= ({}) => {
     return (
     <div>
     <nav className="nav">
-        <a href="/"className="titulo">Poke Api</a>
+        <Link to="/Home">PokeApi</Link>
         <ul>
             <li>
-                <a href="/Home">HomePage</a>
+                <Link to="/Home">HomePage</Link>
             </li>
             <li>
-                <a href="/Items">Items</a>
+                <Link to="Items">Items</Link>
             </li>
         </ul>
 

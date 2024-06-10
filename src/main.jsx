@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import LoginSignup from './LoginSignup.jsx'
+import { BrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App></App>
+    <BrowserRouter> 
+     <App/>
+    </BrowserRouter>
   </React.StrictMode>,
 )
