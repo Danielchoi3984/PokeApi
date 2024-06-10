@@ -27,17 +27,14 @@ export const Item = (page = 0 ) => {
   };
   fetchItems();
   },[]);
-  const handleDetalle = async (id) => {
-      <detalleItem/>
-  }
   return (
     <div>
       {(showDetail) ? 
         <detalleItem item={selecionado} setShowDetail={setShowDetail}/> :
         (
-          <div responsive className='container'> 
+          <div  className='container'> 
       <h2> Lista de Items</h2>
-        <Table responsive striped bordered hover variant="dark">
+        <Table  striped bordered hover variant="dark">
           <thead>
             <tr>
               <th></th>
